@@ -1,23 +1,26 @@
 package com.vital.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "patients")
 public class Patient {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "PAT_ID")
     Long id;
 
+    @Column(name = "PAT_AGE")
     Integer age;
 
+    @Column(name = "PAT_WEIGHT")
     Double weight;
 
+    @Column(name = "PAT_ETHN")
     String ethnicity;
 
+    @Column(name = "NOTES")
     String notes;
 
     public Long getId() {

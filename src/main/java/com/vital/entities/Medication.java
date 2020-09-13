@@ -1,24 +1,32 @@
 package com.vital.entities;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.hibernate.annotations.CreationTimestamp;
+
+import javax.persistence.*;
 import java.util.Date;
 
 public class Medication {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "MED_ID")
     Long medId;
 
+    @Column(name = "PAT_ID")
     Long patientId;
 
+    @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "START_DATE")
     Date startDate;
 
+    @Column(name = "END_DATE")
     Date endDate;
 
+    @Column(name = "NAME")
     String name;
 
+    @Column(name = "DOSAGE")
     String dosage;
 
     public Long getMedId() {
